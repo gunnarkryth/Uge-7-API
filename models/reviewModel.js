@@ -6,7 +6,7 @@ export class reviewModel extends Model {}
 reviewModel.init(
   {
     id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
@@ -16,7 +16,7 @@ reviewModel.init(
       allowNull: false,
     },
     comment: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     num_stars: {
@@ -28,11 +28,11 @@ reviewModel.init(
       allowNull: true,
     },
     estate_id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     user_id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     is_active: {

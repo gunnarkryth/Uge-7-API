@@ -1,10 +1,14 @@
 import express from "express";
-import { staffController } from "./controllers/staffController.js"; // Controller handles staff endpoints
-import { dbController } from "./controllers/dbController.js"; // Controller handles database endpoints
+import { staffController } from "./controllers/staffController.js";
+import { dbController } from "./controllers/dbController.js";
+import "./models/index.js";
 
 const port = 4242;
 const app = express();
+
+//
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send("Hotel Overlook");

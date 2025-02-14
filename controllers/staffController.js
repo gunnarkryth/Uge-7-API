@@ -67,4 +67,20 @@ router.delete("/staff/:id", async (req, res) => {
   }
 });
 
+// DELETE ALL
+router.delete("/staff", async (req, res) => {
+  try {
+    const deletedCount = await staffModel.destroy({ where: {} });
+    if (deletedCount > 0) {
+      res
+        .status(200)
+        .json({ message: `${deletedCount} staff records deleted` });
+    } else {
+      res.status(404).json({ message: "No staff records found" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 export const staffController = router;

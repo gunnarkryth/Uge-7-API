@@ -7,16 +7,16 @@ export class userModel extends Model {}
 userModel.init(
   {
     id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    firstname: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastname: {
+    last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -1,9 +1,9 @@
 import sequelize from "../config/sequelizeConfig.js";
 import { DataTypes, Model } from "sequelize";
 
-export class favoriteModel extends Model {}
+export class genderModel extends Model {}
 
-favoriteModel.init(
+genderModel.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,21 +11,17 @@ favoriteModel.init(
       allowNull: false,
       primaryKey: true,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    estate_id: {
-      type: DataTypes.INTEGER,
+    name: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
   {
     sequelize,
-    modelName: "favorite",
+    modelName: "gender",
     freezeTableName: true,
     timestamps: true,
   }
 );
 
-export default favoriteModel;
+export default genderModel;

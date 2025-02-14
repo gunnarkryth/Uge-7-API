@@ -1,4 +1,4 @@
-// PROJECT STRUCTURE
+
 ```
 Uge-7-API
 ├─ config
@@ -15,12 +15,14 @@ Uge-7-API
 │  ├─ estateModel.js
 │  ├─ estateTypeModel.js
 │  ├─ favoriteModel.js
+│  ├─ genderModel.js
 │  ├─ imagesModel.js
 │  ├─ reviewModel.js
 │  ├─ staffModel.js
 │  └─ userModel.js
 ├─ package-lock.json
 ├─ package.json
+├─ README.md
 ├─ routes
 │  └─ userRoutes.js
 └─ utils

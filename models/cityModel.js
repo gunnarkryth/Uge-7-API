@@ -6,12 +6,12 @@ export class cityModel extends Model {}
 cityModel.init(
   {
     id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    zipcode: {
+    zip_code: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

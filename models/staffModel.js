@@ -6,16 +6,16 @@ export class staffModel extends Model {}
 staffModel.init(
   {
     id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    firstname: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastname: {
+    last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -34,6 +34,14 @@ staffModel.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    gender_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "gender",
+        key: "id",
+      },
     },
   },
   {

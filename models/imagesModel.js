@@ -6,12 +6,12 @@ export class imagesModel extends Model {}
 imagesModel.init(
   {
     id: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    filename: {
+    file_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
