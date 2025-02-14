@@ -7,6 +7,18 @@ Uge-7-API
 │  ├─ dbController.js
 │  ├─ staffController.js
 │  └─ userController.js
+├─ data
+│  ├─ city.csv
+│  ├─ energy-label.csv
+│  ├─ estate-image-rel.csv
+│  ├─ estate-type.csv
+│  ├─ estate.csv
+│  ├─ favorite.csv
+│  ├─ gender.csv
+│  ├─ image.csv
+│  ├─ review.csv
+│  ├─ staff.csv
+│  └─ user.csv
 ├─ index.js
 ├─ models
 │  ├─ cityModel.js
@@ -17,6 +29,7 @@ Uge-7-API
 │  ├─ favoriteModel.js
 │  ├─ genderModel.js
 │  ├─ imagesModel.js
+│  ├─ index.js
 │  ├─ reviewModel.js
 │  ├─ staffModel.js
 │  └─ userModel.js
@@ -26,6 +39,7 @@ Uge-7-API
 ├─ routes
 │  └─ userRoutes.js
 └─ utils
-   └─ passwordUtils.js
+   ├─ passwordUtils.js
+   └─ seedUtils.js
 
 ```
