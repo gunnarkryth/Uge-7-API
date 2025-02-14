@@ -1,7 +1,11 @@
 import express from "express";
 import staffModel from "../models/staffModel.js";
+import genderModel from "../models/genderModel.js";
 
 const router = express.Router();
+
+staffModel.belongsTo(genderModel);
+genderModel.hasMany(staffModel);
 
 // GET ALL STAFF
 router.get("/staff", async (req, res) => {
@@ -53,19 +57,19 @@ router.put("/staff/:id", async (req, res) => {
 });
 
 // DELETE STAFF
-router.delete("/staff/:id", async (req, res) => {
-  try {
-    const staff = await staffModel.findByPk(req.params.id);
-    if (staff) {
-      await staff.destroy();
-      res.status(200).json({ message: "Staff deleted" });
-    } else {
-      res.status(404).json({ message: "Staff not found" });
-    }
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+// router.delete("/staff/:id", async (req, res) => {
+//   try {
+//     const staff = await staffModel.findByPk(req.params.id);
+//     if (staff) {
+//       await staff.destroy();
+//       res.status(200).json({ message: "Staff deleted" });
+//     } else {
+//       res.status(404).json({ message: "Staff not found" });
+//     }
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
 
 // DELETE ALL
 router.delete("/staff", async (req, res) => {

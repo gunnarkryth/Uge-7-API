@@ -1,5 +1,9 @@
 import express from "express";
 import sequelize from "../config/sequelizeConfig.js";
+import genderModel from "../models/genderModel.js";
+import staffModel from "../models/staffModel.js";
+import userModel from "../models/userModel.js";
+import { seedFromCsv } from "../utils/seedUtils.js";
 
 export const dbController = express.Router();
 
@@ -23,5 +27,19 @@ dbController.get("/test", async (req, res) => {
     res
       .status(500)
       .json({ message: `Error! Could not connect to the database: ${error}` });
+  }
+});
+
+// Seed database fra CSV filer
+dbController.get("/seedfromcsv", async (req, res) => {
+  try {
+    // SENDER CSV DATA TIL DATABASE
+    await seedFromCsv("gender.csv", genderModel);
+    await seedFromCsv("staff.csv", staffModel);
+    await seedFromCsv("user.csv", userModel);
+
+    res.send({ message: "Seeding completed" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
