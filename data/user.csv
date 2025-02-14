@@ -1,2 +1,3 @@
 "id","firstname","lastname","email","password","refresh_token","is_active"
 1,"Klaus","Bundgaard","info@webudvikler.dk","password","1234",1
+2,"Henriette","Bundgaard","info+henriette@webudvikler.dk","password","4321",0
