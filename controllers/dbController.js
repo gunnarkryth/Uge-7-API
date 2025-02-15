@@ -2,7 +2,7 @@ import express from "express";
 import sequelize from "../config/sequelizeConfig.js";
 import genderModel from "../models/genderModel.js";
 import staffModel from "../models/staffModel.js";
-import userModel from "../models/userModel.js";
+// import userModel from "../models/userModel.js";
 import { seedFromCsv } from "../utils/seedUtils.js";
 
 export const dbController = express.Router();
@@ -36,7 +36,7 @@ dbController.get("/seedfromcsv", async (req, res) => {
     // SENDER CSV DATA TIL DATABASE
     await seedFromCsv("gender.csv", genderModel);
     await seedFromCsv("staff.csv", staffModel);
-    await seedFromCsv("user.csv", userModel);
+    // await seedFromCsv("user.csv", userModel);
 
     res.send({ message: "Seeding completed" });
   } catch (err) {
